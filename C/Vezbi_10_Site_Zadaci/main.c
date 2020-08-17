@@ -120,8 +120,7 @@ void deli(int wDeck[][13], const char *wFace[], const char *wSuit[] ){
 
 /*
 -----Proekt 2a-----
-Ne se opfateni granicnite slucai koga na primer dvajca igraci kje imaat flush vo raka ili koga dvajca igraci kje imaat po 2 As vo raka itn.
-*/
+// Ne se opfateni granicnite slucai koga na primer dvajca igraci kje imaat flush vo raka ili koga dvajca igraci kje imaat po 2 As vo raka itn.
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -280,3 +279,95 @@ int deli(int wDeck[][13], const char *wFace[], const char *wSuit[] ){
     }
     return (max+1)*10;
 }
+*/
+
+/*
+-----Proekt 3-----
+#include <stdio.h>
+
+void pecatiNiza(int ocenki[][5], int brStudenti);
+void max(int ocenki[][5], int brStudenti);
+void min(int ocenki[][5], int brStudenti);
+void prosek(int ocenki[][5], int brStudenti);
+
+int main(){
+    int brStudenti;
+    scanf("%d", &brStudenti);
+    int ocenki[brStudenti][5];
+    void (*obraboteniOceni[4])(int, int)={pecatiNiza, max, min, prosek};
+    int sign=-1;
+
+    //Vnesuvanje na ocenki za site studenti
+    for(int i=0; i<brStudenti; i++){
+        printf("Vnesi ocenki za student no.%d: ", i);
+        for(int j=0; j<5; j++){
+            scanf("%d", &ocenki[i][j]);
+        }
+    }
+
+    while(1){
+        printf("0 - Ispecati ja nizata na ocenki\n");
+        printf("1 - Najdi ja maksimalnata ocenka\n");
+        printf("2 - Najdi ja minimalnata ocenka\n");
+        printf("3 - Ispecati ja prosecnata ocenka za sekoj student\n");
+        printf("4 - Kraj\n");
+        scanf("%d", &sign);
+        if(sign==0)
+            (*obraboteniOceni[0])(ocenki, brStudenti);
+        else if(sign==1)
+            (*obraboteniOceni[1])(ocenki, brStudenti);
+        else if(sign==2)
+            (*obraboteniOceni[2])(ocenki, brStudenti);
+        else if(sign==3)
+            (*obraboteniOceni[3])(ocenki, brStudenti);
+        else
+            break;
+    }
+    return 0;
+}
+
+void pecatiNiza(int ocenki[][5], int brStudenti){
+    for(int i=0; i<brStudenti; i++){
+        printf("Student no.%d ocenki: ",i);
+        for(int j=0; j<5; j++){
+            printf("%d ", ocenki[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void max(int ocenki[][5], int brStudenti){
+    for(int i=0; i<brStudenti; i++){
+        printf("Student no.%d max ocenka: ",i);
+        int maxGrade=ocenki[i][0];
+        for(int j=1; j<5; j++){
+            if(maxGrade<ocenki[i][j])
+                maxGrade=ocenki[i][j];
+        }
+        printf("%d\n", maxGrade);
+    }
+}
+
+void min(int ocenki[][5], int brStudenti){
+    for(int i=0; i<brStudenti; i++){
+        printf("Student no.%d min ocenka: ",i);
+        int minGrade=ocenki[i][0];
+        for(int j=1; j<5; j++){
+            if(minGrade>ocenki[i][j])
+                minGrade=ocenki[i][j];
+        }
+        printf("%d\n", minGrade);
+    }
+}
+
+void prosek(int ocenki[][5], int brStudenti){
+    for(int i=0; i<brStudenti; i++){
+        printf("Student no.%d prosek: ",i);
+        int avg=0;
+        for(int j=0; j<5; j++){
+            avg+=ocenki[i][j];
+        }
+        printf("%.2f\n", (float)avg/5);
+    }
+}
+*/
