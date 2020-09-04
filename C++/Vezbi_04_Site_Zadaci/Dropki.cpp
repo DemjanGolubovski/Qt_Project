@@ -1,10 +1,13 @@
 #include <iostream>
+#include <cmath>
 #include "Dropki.h"
 
 using namespace std;
 
 int gcd(int a, int b)
 {
+    a=abs(a);
+    b=abs(b);
     if (a == 0)
        return b;
     if (b == 0)
