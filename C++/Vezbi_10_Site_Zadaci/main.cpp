@@ -92,6 +92,8 @@ int main()
                 if(d!=0){
                     d->prikazi_podatoci();
                 }
+                // moze i vaka koga bi se postavila funkcijata prikazi_podatoci kako virtuelna kaj Vraboten(base class)
+//                f->getData()->prikazi_podatoci();
                 f=f->getNext();
             }
             break;

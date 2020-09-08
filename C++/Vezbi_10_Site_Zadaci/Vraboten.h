@@ -11,7 +11,7 @@ public:
     Vraboten(char *name="", char *lastN="", int year=0);
     virtual ~Vraboten();
     void postavi(char *name="", char *lastN="", int year=0);
-    void prikazi_podatoci();
+    void prikazi_podatoci(); // moze da se stavi i kako virtual i da ne se koristi dynamic_cast
 };
 
 class Profesor: public Vraboten{
