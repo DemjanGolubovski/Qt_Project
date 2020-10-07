@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>Images/TextImage.png</file>
+        <file>Images/play_icon.png</file>
+        <file>Images/mute.png</file>
+        <file>Images/speaker.png</file>
+        <file>Images/black_mic.png</file>
+        <file>Images/headphones.png</file>
+        <file>Images/mute_mic.png</file>
+        <file>Images/white_mic.png</file>
+        <file>Images/handle.png</file>
+        <file>Images/groove.png</file>
+        <file>Images/mute_mic_choir.png</file>
+        <file>Images/white_mic_choir.png</file>
+    </qresource>
+</RCC>
